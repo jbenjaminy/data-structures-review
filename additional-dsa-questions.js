@@ -25,8 +25,39 @@ let setZero = (arr) => {
     }
     return arr  
 }
-console.log(setZero(twoD))
+// console.log(setZero(twoD))
+
 /* You are given an array containing positive and negative integers. Write an algorithm which will find the largest sum in a continuous sequence. */
+    // [4, -12, 8, 2, 14, -1, 12]
+    // 1. Have a variable store the current largest sum 
+    // 2. Loop through the array, compare the value of the current largest sum to the current sum of indexes
+        
+const findHighest = (array) => {
+    let currentHigh = 0
+
+    for (let i = 0; i < array.length; i++) {
+        let currentTotal = array[i]
+
+        if (currentTotal > currentHigh) {
+            currentHigh = currentTotal
+        }
+        for (let j = i + 1; j < array.length; j++) {
+            currentTotal = currentTotal + array[j]
+            if (currentTotal > currentHigh) {
+                currentHigh = currentTotal
+            }
+        }
+    }
+    return currentHigh
+}
+
+// console.log(findHighest([4, -12, 8, 2, 14, -1, 12]));
+
+
+
+
+
+
 
 /* Write an algorithm which will sum two numbers stored in linked lists, where each node contains a single digit of the number. */
 
