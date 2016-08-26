@@ -207,9 +207,30 @@ function sumOfLinkedList(node1, node2) {
   return linkedResult;
 }
 
-console.log(stringify(sumOfLinkedList(node1, node4)));
+// console.log(stringify(sumOfLinkedList(node1, node4)));
 
 /* Write an algorithm which will find all pairs of number in an array which sum to a certain value. */
+let testArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+let findPairs = (arr, val) => {
+    let output = []
+    for (let i=0; i < arr.length; i++) {
+        let num1 = arr[i]
+        let diff = val - num1
+        for (let j=i + 1; j < arr.length; j++) {
+            let num2 = arr[j]
+            if (num2 === diff) {
+                let pair = []
+                pair.push(num1, num2)
+                output.push(pair)
+            }
+        }
+
+    }
+    return output
+}
+
+console.log(findPairs(testArr, 17))
 
 /* Implement a function to check if a tree is balanced (i.e. a tree where no two leaves differ in distance from the root by more than one). */
 
